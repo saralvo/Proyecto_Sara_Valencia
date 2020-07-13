@@ -8,6 +8,7 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.actions.Switch;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -40,7 +41,9 @@ public class ValidarPDFStepDefinitions {
 
     @Entonces("^debo poder visualizar el pdf seleccionado$")
     public void deboPoderVisualizarElPdfSeleccionado() {
-
+        theActorInTheSpotlight().attemptsTo(
+                Switch.toWindow("s56_ActualizarTarifarioDepositos_Dic2019")
+        );
     }
 
 }
